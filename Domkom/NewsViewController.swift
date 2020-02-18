@@ -9,41 +9,39 @@
 import UIKit
 
 class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
-    
-    
+    @IBOutlet weak var table: UITableView!
+    var names = ["VibeCheck", "Hello World"]
+
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           table.delegate = self
+           table.dataSource = self
+       }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+        let name = names[indexPath.row]
+        cell.newsTitle.text = name
+        var image: UIImage?
+        let urlString = "https://i.ytimg.com/vi/mYugwGNOIeM/maxresdefault.jpg"
+        let url = NSURL(string: urlString)! as URL
+        if let imageData: NSData = NSData(contentsOf: url) {
+            image = UIImage(data: imageData as Data)
+        }
+        cell.imageView?.image = image
+        return cell
     }
     
-    @IBOutlet weak var table: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
+   
     // MARK: - Table view data source
 
    
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+   
 
     /*
     // Override to support conditional editing of the table view.
