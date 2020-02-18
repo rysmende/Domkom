@@ -8,15 +8,19 @@
 
 import UIKit
 
-class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource{
+class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var table: UITableView!
-    var names = ["VibeCheck", "Hello World"]
+    var names = ["VibeCheck"]
 
        override func viewDidLoad() {
            super.viewDidLoad()
            table.delegate = self
            table.dataSource = self
-       }
+        //ask Adakhan on the following problem:
+        //Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[UIImageView _isSymbolImage]: unrecognized selector sent to instance 0x7ffab261fbc0'
+        
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -26,13 +30,8 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
         let name = names[indexPath.row]
         cell.newsTitle.text = name
-        var image: UIImage?
-        let urlString = "https://i.ytimg.com/vi/mYugwGNOIeM/maxresdefault.jpg"
-        let url = NSURL(string: urlString)! as URL
-        if let imageData: NSData = NSData(contentsOf: url) {
-            image = UIImage(data: imageData as Data)
-        }
-        cell.imageView?.image = image
+        let image : UIImage = UIImage(named: name)!
+        cell.newsImage = UIImageView(image: image)
         return cell
     }
     
@@ -89,3 +88,4 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     */
 
 }
+
