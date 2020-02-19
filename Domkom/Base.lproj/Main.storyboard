@@ -555,13 +555,13 @@
         <!--Оставить заявку-->
         <scene sceneID="xTY-Un-CpC">
             <objects>
-                <viewController id="N5E-nc-eaS" sceneMemberID="viewController">
+                <viewController id="N5E-nc-eaS" customClass="AddRequestViewController" customModule="Domkom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ayh-DD-FjQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Комментарий к заявке" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-MY-7zD">
-                                <rect key="frame" x="30" y="193" width="354" height="200"/>
+                                <rect key="frame" x="30" y="243" width="354" height="200"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="hfa-eo-t0x"/>
@@ -571,26 +571,72 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mc-dq-6t4">
-                                <rect key="frame" x="30" y="128" width="354" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="30" y="128" width="354" height="80"/>
+                                <state key="normal" title="Тип заявки" backgroundImage="DropDown"/>
+                                <connections>
+                                    <action selector="DisplayRequests:" destination="N5E-nc-eaS" eventType="touchUpInside" id="4l4-wo-SJj"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlA-x0-KJy">
+                                <rect key="frame" x="55" y="182" width="304" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="iIj-gB-b9a"/>
+                                </constraints>
+                                <state key="normal" title="Ремонт" backgroundImage="LineGray"/>
+                                <connections>
+                                    <action selector="setType:" destination="N5E-nc-eaS" eventType="touchUpInside" id="qOE-0o-iSw"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ChQ-Vn-of0">
+                                <rect key="frame" x="55" y="214" width="304" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="GHj-pp-BG8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="hzG-a6-awP"/>
+                                </constraints>
+                                <state key="normal" title="Пропуск" backgroundImage="LineGray"/>
+                                <connections>
+                                    <action selector="setType:" destination="N5E-nc-eaS" eventType="touchUpInside" id="gjI-hx-rTN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsn-ub-B7y">
+                                <rect key="frame" x="30" y="589" width="354" height="89"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="hk7-K8-Tyx"/>
+                                </constraints>
+                                <state key="normal" title="Отправить" backgroundImage="Button">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="ChQ-Vn-of0" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="55" id="Ism-Na-xKl"/>
+                            <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="ChQ-Vn-of0" secondAttribute="trailing" constant="55" id="JZd-p8-ZJl"/>
                             <constraint firstItem="W8f-MY-7zD" firstAttribute="top" secondItem="2mc-dq-6t4" secondAttribute="bottom" constant="35" id="Jeb-0G-4FW"/>
+                            <constraint firstItem="rlA-x0-KJy" firstAttribute="top" secondItem="Aq9-sM-hGd" secondAttribute="top" constant="94" id="JmB-DX-NTx"/>
+                            <constraint firstItem="rlA-x0-KJy" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="55" id="ZhY-1K-rYZ"/>
+                            <constraint firstItem="Xsn-ub-B7y" firstAttribute="leading" secondItem="W8f-MY-7zD" secondAttribute="leading" id="eWu-wN-RO4"/>
                             <constraint firstItem="2mc-dq-6t4" firstAttribute="top" secondItem="Aq9-sM-hGd" secondAttribute="top" constant="40" id="gHf-MR-NIO"/>
+                            <constraint firstItem="Xsn-ub-B7y" firstAttribute="centerX" secondItem="Ayh-DD-FjQ" secondAttribute="centerX" id="iYP-09-ZZ0"/>
+                            <constraint firstItem="ChQ-Vn-of0" firstAttribute="top" secondItem="2mc-dq-6t4" secondAttribute="bottom" constant="6" id="kAl-uh-HxI"/>
+                            <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="rlA-x0-KJy" secondAttribute="trailing" constant="55" id="out-dl-NYq"/>
                             <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="W8f-MY-7zD" secondAttribute="trailing" constant="30" id="pV3-Yw-Cpp"/>
                             <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="2mc-dq-6t4" secondAttribute="trailing" constant="30" id="vMo-1P-6KN"/>
                             <constraint firstItem="W8f-MY-7zD" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="30" id="vmh-dS-TW1"/>
                             <constraint firstItem="2mc-dq-6t4" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="30" id="zf2-pX-cHw"/>
+                            <constraint firstItem="Aq9-sM-hGd" firstAttribute="bottom" secondItem="Xsn-ub-B7y" secondAttribute="bottom" constant="135" id="zpQ-fU-n9G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Aq9-sM-hGd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Оставить заявку" id="RBl-t8-Nwb"/>
+                    <connections>
+                        <outletCollection property="requests" destination="rlA-x0-KJy" collectionClass="NSMutableArray" id="bu6-Nj-dRl"/>
+                        <outletCollection property="requests" destination="ChQ-Vn-of0" collectionClass="NSMutableArray" id="AMf-ly-0tC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjr-oV-yFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="2296"/>
+            <point key="canvasLocation" x="208.69565217391306" y="2295.5357142857142"/>
         </scene>
         <!--Лента-->
         <scene sceneID="rh3-ah-uLz">
@@ -614,7 +660,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="135" id="iyc-db-Nrv" customClass="NewsCell" customModule="Domkom" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="NewsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="135" id="iyc-db-Nrv" customClass="NewsCell" customModule="Domkom" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iyc-db-Nrv" id="TJA-C0-Cdi">
@@ -669,8 +715,10 @@
                                         <connections>
                                             <outlet property="Image" destination="41j-Rl-pGX" id="cSO-QL-ZKp"/>
                                             <outlet property="NewsDate" destination="De2-K2-5RU" id="gHd-P5-ByT"/>
-                                            <outlet property="newsImage" destination="41j-Rl-pGX" id="PmC-77-eL5"/>
-                                            <outlet property="newsTitle" destination="hUC-cJ-coP" id="ZBE-E7-GLU"/>
+                                            <outlet property="newsComs" destination="Owe-nQ-daz" id="eXq-iF-49a"/>
+                                            <outlet property="newsDate" destination="De2-K2-5RU" id="5Ya-bZ-1QA"/>
+                                            <outlet property="newsImage" destination="41j-Rl-pGX" id="HA8-lC-Pga"/>
+                                            <outlet property="newsTitle" destination="hUC-cJ-coP" id="b5x-oA-ph9"/>
                                             <outlet property="numOfComs" destination="Owe-nQ-daz" id="Icg-AM-Gfr"/>
                                             <segue destination="gcO-4I-GuA" kind="show" id="4Uu-ff-EQg"/>
                                         </connections>
@@ -1038,7 +1086,9 @@
         <image name="Car" width="28" height="12.5"/>
         <image name="Code" width="75" height="12"/>
         <image name="CodeInput" width="301" height="44"/>
+        <image name="DropDown" width="340" height="80"/>
         <image name="LineBlue" width="300" height="1"/>
+        <image name="LineGray" width="300" height="1"/>
         <image name="Logo" width="187" height="119"/>
         <image name="News" width="20" height="20"/>
         <image name="PhoneInput" width="301" height="54.5"/>

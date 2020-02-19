@@ -16,7 +16,8 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
        override func viewDidLoad() {
            super.viewDidLoad()
            table.delegate = self
-           table.dataSource = self
+            table.dataSource = self
+        table.register(NewsCell.self, forCellReuseIdentifier: "NewsCell")
         //ask Adakhan on the following problem:
         //Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[UIImageView _isSymbolImage]: unrecognized selector sent to instance 0x7ffab261fbc0'
         
@@ -28,10 +29,7 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-        let name = names[indexPath.row]
-        cell.newsTitle.text = name
-        let image : UIImage = UIImage(named: name)!
-        cell.newsImage = UIImageView(image: image)
+        cell.configure(title: "VibeCheck", image: UIImage(named: "VibeCheck")!, date: "12", comments: 2)
         return cell
     }
     

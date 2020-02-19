@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E069669C23F42B2F00E7969D /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069669A23F42B2F00E7969D /* NewsCell.swift */; };
+		E069669D23F42B2F00E7969D /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E069669B23F42B2F00E7969D /* NewsCell.xib */; };
+		E069669F23F42DB500E7969D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069669E23F42DB500E7969D /* NewsViewController.swift */; };
+		E06966A423F4317E00E7969D /* RequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06966A223F4317E00E7969D /* RequestCell.swift */; };
+		E06966A523F4317E00E7969D /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06966A323F4317E00E7969D /* RequestCell.xib */; };
 		E078BB6D23F2569700D4DCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078BB6C23F2569700D4DCE9 /* AppDelegate.swift */; };
 		E078BB6F23F2569700D4DCE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078BB6E23F2569700D4DCE9 /* SceneDelegate.swift */; };
 		E078BB7123F2569700D4DCE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078BB7023F2569700D4DCE9 /* ViewController.swift */; };
 		E078BB7423F2569700D4DCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7223F2569700D4DCE9 /* Main.storyboard */; };
 		E078BB7623F2569900D4DCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7523F2569900D4DCE9 /* Assets.xcassets */; };
 		E078BB7923F2569900D4DCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7723F2569900D4DCE9 /* LaunchScreen.storyboard */; };
+		E0AC44AE23FD0F0100E16043 /* AddRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC44AD23FD0F0100E16043 /* AddRequestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E069669A23F42B2F00E7969D /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		E069669B23F42B2F00E7969D /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
+		E069669E23F42DB500E7969D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		E06966A223F4317E00E7969D /* RequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCell.swift; sourceTree = "<group>"; };
+		E06966A323F4317E00E7969D /* RequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestCell.xib; sourceTree = "<group>"; };
 		E078BB6923F2569700D4DCE9 /* Domkom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Domkom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E078BB6C23F2569700D4DCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E078BB6E23F2569700D4DCE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +35,7 @@
 		E078BB7523F2569900D4DCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E078BB7823F2569900D4DCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E078BB7A23F2569900D4DCE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0AC44AD23FD0F0100E16043 /* AddRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +73,13 @@
 				E078BB7023F2569700D4DCE9 /* ViewController.swift */,
 				E078BB7223F2569700D4DCE9 /* Main.storyboard */,
 				E078BB7523F2569900D4DCE9 /* Assets.xcassets */,
+				E069669E23F42DB500E7969D /* NewsViewController.swift */,
+				E069669A23F42B2F00E7969D /* NewsCell.swift */,
+				E06966A223F4317E00E7969D /* RequestCell.swift */,
+				E0AC44AD23FD0F0100E16043 /* AddRequestViewController.swift */,
+				E06966A323F4317E00E7969D /* RequestCell.xib */,
 				E078BB7723F2569900D4DCE9 /* LaunchScreen.storyboard */,
+				E069669B23F42B2F00E7969D /* NewsCell.xib */,
 				E078BB7A23F2569900D4DCE9 /* Info.plist */,
 			);
 			path = Domkom;
@@ -127,7 +145,9 @@
 			files = (
 				E078BB7923F2569900D4DCE9 /* LaunchScreen.storyboard in Resources */,
 				E078BB7623F2569900D4DCE9 /* Assets.xcassets in Resources */,
+				E069669D23F42B2F00E7969D /* NewsCell.xib in Resources */,
 				E078BB7423F2569700D4DCE9 /* Main.storyboard in Resources */,
+				E06966A523F4317E00E7969D /* RequestCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E078BB7123F2569700D4DCE9 /* ViewController.swift in Sources */,
+				E0AC44AE23FD0F0100E16043 /* AddRequestViewController.swift in Sources */,
+				E06966A423F4317E00E7969D /* RequestCell.swift in Sources */,
 				E078BB6D23F2569700D4DCE9 /* AppDelegate.swift in Sources */,
+				E069669C23F42B2F00E7969D /* NewsCell.swift in Sources */,
+				E069669F23F42DB500E7969D /* NewsViewController.swift in Sources */,
 				E078BB6F23F2569700D4DCE9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
