@@ -7,25 +7,25 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Authorization View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Domkom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AuthorizationViewController" customModule="Domkom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер телефона" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INj-KT-Mno">
-                                <rect key="frame" x="91" y="313" width="232.5" height="24"/>
+                                <rect key="frame" x="91" y="432" width="232.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="4qf-Cj-xGV">
-                                <rect key="frame" x="86.999999999999986" y="114" width="240.00000000000003" height="119"/>
+                                <rect key="frame" x="87" y="114" width="240" height="238"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(+996)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8j-rb-y11">
-                                <rect key="frame" x="59" y="361.5" width="90.5" height="36.5"/>
+                                <rect key="frame" x="59" y="480.5" width="90.5" height="36.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36.5" id="odW-C1-f9k"/>
                                 </constraints>
@@ -34,19 +34,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneInput" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-d5-GKS">
-                                <rect key="frame" x="50" y="350" width="314" height="54.5"/>
+                                <rect key="frame" x="50" y="469" width="314" height="109"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456789" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QNL-yD-SRU">
-                                <rect key="frame" x="163" y="360" width="194" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="194" id="oWS-qM-6xU"/>
-                                    <constraint firstAttribute="height" constant="42" id="smK-yf-Q6d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-8v-TM5">
-                                <rect key="frame" x="37" y="432.5" width="340" height="89"/>
+                                <rect key="frame" x="-133" y="606" width="680" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="0hA-Ki-vaD"/>
                                 </constraints>
@@ -54,24 +45,32 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="sendCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JLw-0x-riV"/>
                                     <segue destination="uaN-gy-V6R" kind="presentation" modalPresentationStyle="fullScreen" id="oLG-s7-O6Y"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="999440880" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g4m-jb-54d">
+                                <rect key="frame" x="172" y="479" width="194" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="U1g-pj-VLR"/>
+                                    <constraint firstAttribute="width" constant="194" id="fMZ-8M-G5t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="g4m-jb-54d" firstAttribute="top" secondItem="INj-KT-Mno" secondAttribute="bottom" constant="23" id="0Bw-eY-GRe"/>
                             <constraint firstItem="GUg-8v-TM5" firstAttribute="top" secondItem="fYR-d5-GKS" secondAttribute="bottom" constant="28" id="3LA-2x-kK9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g4m-jb-54d" secondAttribute="trailing" constant="48" id="4dz-2j-E0f"/>
                             <constraint firstItem="S8j-rb-y11" firstAttribute="top" secondItem="INj-KT-Mno" secondAttribute="bottom" constant="24.5" id="BA8-7b-H9T"/>
-                            <constraint firstItem="QNL-yD-SRU" firstAttribute="top" secondItem="INj-KT-Mno" secondAttribute="bottom" constant="23" id="Cr5-zz-11H"/>
                             <constraint firstItem="4qf-Cj-xGV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="DUd-YE-iVB"/>
+                            <constraint firstItem="g4m-jb-54d" firstAttribute="leading" secondItem="S8j-rb-y11" secondAttribute="trailing" constant="22.5" id="HPZ-T3-ulC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fYR-d5-GKS" secondAttribute="trailing" constant="50" id="I5a-Eb-qDS"/>
                             <constraint firstItem="INj-KT-Mno" firstAttribute="top" secondItem="4qf-Cj-xGV" secondAttribute="bottom" constant="80" id="L4k-pT-Mvj"/>
                             <constraint firstItem="fYR-d5-GKS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Sle-CB-ROY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QNL-yD-SRU" secondAttribute="trailing" constant="57" id="WMo-Cu-wyE"/>
                             <constraint firstItem="S8j-rb-y11" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="Xwj-Sn-TSI"/>
-                            <constraint firstItem="QNL-yD-SRU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S8j-rb-y11" secondAttribute="trailing" constant="8" symbolic="YES" id="ZPi-Rx-y1R"/>
-                            <constraint firstItem="S8j-rb-y11" firstAttribute="baseline" secondItem="QNL-yD-SRU" secondAttribute="firstBaseline" id="d5E-m8-LfV"/>
-                            <constraint firstItem="S8j-rb-y11" firstAttribute="centerY" secondItem="QNL-yD-SRU" secondAttribute="centerY" constant="-1.25" id="eLM-YM-sLA"/>
                             <constraint firstItem="4qf-Cj-xGV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86.999999999999986" id="fO0-yA-6iM"/>
                             <constraint firstItem="fYR-d5-GKS" firstAttribute="top" secondItem="INj-KT-Mno" secondAttribute="bottom" constant="13" id="lR0-W4-Psz"/>
                             <constraint firstItem="4qf-Cj-xGV" firstAttribute="centerX" secondItem="INj-KT-Mno" secondAttribute="centerX" id="sRV-2P-RR0"/>
@@ -81,47 +80,57 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="63c-LH-bMn"/>
+                    <connections>
+                        <outlet property="phoneField" destination="g4m-jb-54d" id="H8Y-Ch-mXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-630" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Authentification View Controller-->
         <scene sceneID="Hnf-kb-Kr8">
             <objects>
-                <viewController id="uaN-gy-V6R" customClass="ViewController" customModule="Domkom" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uaN-gy-V6R" customClass="AuthentificationViewController" customModule="Domkom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IsP-B5-agB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rNb-56-614">
-                                <rect key="frame" x="86.999999999999986" y="114" width="240.00000000000003" height="119"/>
+                                <rect key="frame" x="87" y="114" width="240" height="238"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CodeInput" translatesAutoresizingMaskIntoConstraints="NO" id="iuO-dU-wL7">
-                                <rect key="frame" x="50" y="360" width="314" height="44"/>
+                                <rect key="frame" x="50" y="479" width="314" height="88"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите 4 значный код, который вы получили в SMS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buC-L1-NYK">
-                                <rect key="frame" x="41.5" y="289" width="331.5" height="48"/>
+                                <rect key="frame" x="41.5" y="408" width="331.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaV-qy-HIc">
-                                <rect key="frame" x="202" y="427.5" width="192" height="83"/>
+                                <rect key="frame" x="202" y="590.5" width="192" height="166"/>
                                 <state key="normal" title="Далее" backgroundImage="Button"/>
                                 <connections>
+                                    <action selector="signIn:" destination="uaN-gy-V6R" eventType="touchUpInside" id="BFH-Jr-7T0"/>
                                     <segue destination="hIo-1g-LU8" kind="presentation" modalPresentationStyle="fullScreen" id="GkV-WQ-hxy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30G-Jw-vAL">
-                                <rect key="frame" x="50" y="448.5" width="98" height="30"/>
+                                <rect key="frame" x="50" y="611.5" width="98" height="30"/>
                                 <state key="normal" title="Получить код">
                                     <color key="titleColor" red="0.10565147549999999" green="0.38607141379999999" blue="0.7529779673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Code" translatesAutoresizingMaskIntoConstraints="NO" id="KS6-1O-07u">
-                                <rect key="frame" x="81" y="354" width="75" height="12"/>
+                                <rect key="frame" x="81" y="473" width="150" height="24"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHj-2i-R88">
+                                <rect key="frame" x="71" y="365" width="271" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -146,10 +155,13 @@
                         <viewLayoutGuide key="safeArea" id="f9x-CJ-IaD"/>
                     </view>
                     <navigationItem key="navigationItem" id="gXm-oO-KhG"/>
+                    <connections>
+                        <outlet property="codeField" destination="jHj-2i-R88" id="L4G-DZ-dKN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Bq-4Z-nO8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="117"/>
+            <point key="canvasLocation" x="208.69565217391306" y="116.51785714285714"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gDw-ff-pIh">
