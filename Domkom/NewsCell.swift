@@ -15,22 +15,12 @@ class NewsCell: UITableViewCell {
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsComs: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func configure(title : String, image : UIImage, date: String, comments: Int) {
-        newsTitle?.text = title
-        newsDate?.text = date
-        newsImage? = UIImageView(image: image)
-        newsComs?.text = "\(comments)"
+ 
+    func configure(news: NewsCellStruct) {
+        newsTitle.text = news.title
+        newsDate.text = news.date
+        newsImage.image = news.image
+        newsComs.text = "\(news.coms)"
     }
     
 }

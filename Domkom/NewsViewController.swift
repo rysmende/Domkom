@@ -8,28 +8,37 @@
 
 import UIKit
 
+
 class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
-    var names = ["VibeCheck"]
+    var data : [NewsCellStruct] = []
 
        override func viewDidLoad() {
-           super.viewDidLoad()
-           table.delegate = self
-            table.dataSource = self
-        table.register(NewsCell.self, forCellReuseIdentifier: "NewsCell")
+        super.viewDidLoad()
+        loadData()
+        
+//        
         //ask Adakhan on the following problem:
         //Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[UIImageView _isSymbolImage]: unrecognized selector sent to instance 0x7ffab261fbc0'
-        
+    }
+    
+    func loadData(){
+        data.append(NewsCellStruct(image: UIImage(named: "Car")!, title: "Cars", date: "12-12-2012", coms: 3))
+        data.append(NewsCellStruct(image: UIImage(named: "Camera")!, title: "Camera", date: "12-12-2012", coms: 3))
+        data.append(NewsCellStruct(image: UIImage(named: "LaunchBackground")!, title: "Hello", date: "12-12-2012", coms: 3))
+        data.append(NewsCellStruct(image: UIImage(named: "Logo")!, title: "LOGORIPHM", date: "12-12-2012", coms: 3))
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let news = data[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-        cell.configure(title: "VibeCheck", image: UIImage(named: "VibeCheck")!, date: "12", comments: 2)
+        
+        cell.configure(news:news)
         return cell
     }
     
