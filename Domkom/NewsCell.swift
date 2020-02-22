@@ -20,7 +20,7 @@ class NewsCell: UITableViewCell {
         newsTitle.text = news.title
         newsDate.text = news.date
         newsImage.image = news.image
-        newsComs.text = "\(news.coms)"
+        newsComs.text = "Количество комментариев: \(news.coms)"
     }
     
 }
