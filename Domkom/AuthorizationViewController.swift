@@ -12,31 +12,37 @@ import FirebaseAuth
 
 class AuthorizationViewController: UIViewController {
 
+    @IBOutlet weak var phoneAlert: UILabel!
     @IBOutlet weak var phoneField: UITextField!
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-     
     
     @IBAction func sendCode(_ sender: Any) {
         if phoneField.text?.count != 9 {
+            phoneAlert.text = "Номер телефона должен состоять из 9 цифр"
+            phoneAlert.isHidden = false
             return
         }
-        let phoneNumber = "+996" + (phoneField.text ?? "")
+        let phoneNumber = "+996" + phoneField.text!
         Auth.auth().languageCode = "ru";
     PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             if error != nil {
                 print(error!)
-                print("HELLLLLLLLLLLLLLLLOOOOOOOOOOOO!!!!!!!!!!!")
+                self.phoneAlert.text = "Unknown Error"
+                self.phoneAlert.isHidden = false
                 return
             }
-            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-            UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let secondViewController = storyboard.instantiateViewController(withIdentifier: "AuthentificationVC") as! AuthentificationViewController
+        secondViewController.modalPresentationStyle = .fullScreen
+        secondViewController.verificationID = verificationID!
+        secondViewController.phoneNumber = phoneNumber
+        self.present(secondViewController, animated: true, completion: nil)
         }
-        
+       
     }
         
     

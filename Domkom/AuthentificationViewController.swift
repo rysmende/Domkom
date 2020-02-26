@@ -17,14 +17,18 @@ class AuthentificationViewController: UIViewController {
     var phoneNumber:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        verificationID = UserDefaults.standard.string(forKey: "authVerificationID") ?? "what"
-        phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? "what"
+//        verificationID = defaults.string(forKey: "authVerificationID")!
+//        phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")!
         print(phoneNumber)
         print(verificationID)
     }
     
     @IBAction func signIn(_ sender: Any) {
-        let verificationCode = codeField.text  ?? ""
+        if (codeField.text?.count != 6) {
+//        message.isHidden = false
+        return
+        }
+        let verificationCode = codeField.text!
         let credential = PhoneAuthProvider.provider().credential(
         withVerificationID: verificationID,
         verificationCode: verificationCode)
@@ -34,7 +38,6 @@ class AuthentificationViewController: UIViewController {
             print ("YO YOU MISSED SOMETHING UP THERE")
             return
           }
-            
         }
     }
     
