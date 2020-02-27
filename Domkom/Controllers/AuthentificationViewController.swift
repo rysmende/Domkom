@@ -38,6 +38,10 @@ class AuthentificationViewController: UIViewController {
             print ("YO YOU MISSED SOMETHING UP THERE")
             return
           }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextVC = storyboard.instantiateViewController(withIdentifier: "RegistrationVC")
+        nextVC.modalPresentationStyle = .fullScreen
+            self.present(nextVC, animated: true, completion: nil)
         }
     }
     

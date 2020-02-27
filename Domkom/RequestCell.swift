@@ -10,15 +10,14 @@ import UIKit
 
 class RequestCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var num: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    
+    func configure(request: RequestCellStruct){
+        self.icon.image = UIImage(named: request.icon)
+        self.num.text = self.num.text! + "\(request.num)"
+        self.type.text = self.type.text! + "\(request.type)"
     }
     
 }

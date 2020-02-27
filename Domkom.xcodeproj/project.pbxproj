@@ -15,10 +15,11 @@
 		E06966A523F4317E00E7969D /* RequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06966A323F4317E00E7969D /* RequestCell.xib */; };
 		E078BB6D23F2569700D4DCE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078BB6C23F2569700D4DCE9 /* AppDelegate.swift */; };
 		E078BB6F23F2569700D4DCE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078BB6E23F2569700D4DCE9 /* SceneDelegate.swift */; };
-		E078BB7123F2569700D4DCE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078BB7023F2569700D4DCE9 /* ViewController.swift */; };
 		E078BB7423F2569700D4DCE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7223F2569700D4DCE9 /* Main.storyboard */; };
 		E078BB7623F2569900D4DCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7523F2569900D4DCE9 /* Assets.xcassets */; };
 		E078BB7923F2569900D4DCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7723F2569900D4DCE9 /* LaunchScreen.storyboard */; };
+		E08B79D62407904700F98C2A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B79D52407904700F98C2A /* RequestViewController.swift */; };
+		E08B79D92407966A00F98C2A /* RequestCellStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B79D82407966A00F98C2A /* RequestCellStruct.swift */; };
 		E099511C23FE5DD10059DDD1 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099511B23FE5DD10059DDD1 /* AuthorizationViewController.swift */; };
 		E099511E23FE5DF60059DDD1 /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099511D23FE5DF60059DDD1 /* AuthentificationViewController.swift */; };
 		E099512023FE5E050059DDD1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099511F23FE5E050059DDD1 /* RegistrationViewController.swift */; };
@@ -39,11 +40,12 @@
 		E078BB6923F2569700D4DCE9 /* Domkom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Domkom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E078BB6C23F2569700D4DCE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E078BB6E23F2569700D4DCE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E078BB7023F2569700D4DCE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E078BB7323F2569700D4DCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E078BB7523F2569900D4DCE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E078BB7823F2569900D4DCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E078BB7A23F2569900D4DCE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E08B79D52407904700F98C2A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		E08B79D82407966A00F98C2A /* RequestCellStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCellStruct.swift; sourceTree = "<group>"; };
 		E099511B23FE5DD10059DDD1 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		E099511D23FE5DF60059DDD1 /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
 		E099511F23FE5E050059DDD1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -102,26 +104,51 @@
 		E078BB6B23F2569700D4DCE9 /* Domkom */ = {
 			isa = PBXGroup;
 			children = (
-				E078BB6C23F2569700D4DCE9 /* AppDelegate.swift */,
-				E078BB6E23F2569700D4DCE9 /* SceneDelegate.swift */,
-				E078BB7023F2569700D4DCE9 /* ViewController.swift */,
-				E078BB7223F2569700D4DCE9 /* Main.storyboard */,
-				E078BB7523F2569900D4DCE9 /* Assets.xcassets */,
-				E069669E23F42DB500E7969D /* NewsViewController.swift */,
-				E069669A23F42B2F00E7969D /* NewsCell.swift */,
+				E08B79D124078A7F00F98C2A /* Controllers */,
+				E08B79D224078A9900F98C2A /* Delegates */,
+				E08B79D324078AEF00F98C2A /* Supporting Files */,
+				E078BB7A23F2569900D4DCE9 /* Info.plist */,
 				E0EE5EB424001F0400FAEFF3 /* NewsCellStruct.swift */,
+				E069669A23F42B2F00E7969D /* NewsCell.swift */,
+				E08B79D82407966A00F98C2A /* RequestCellStruct.swift */,
+				E06966A223F4317E00E7969D /* RequestCell.swift */,
+				E078BB7523F2569900D4DCE9 /* Assets.xcassets */,
+			);
+			path = Domkom;
+			sourceTree = "<group>";
+		};
+		E08B79D124078A7F00F98C2A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0AC44AD23FD0F0100E16043 /* AddRequestViewController.swift */,
 				E099511B23FE5DD10059DDD1 /* AuthorizationViewController.swift */,
 				E099511D23FE5DF60059DDD1 /* AuthentificationViewController.swift */,
 				E099511F23FE5E050059DDD1 /* RegistrationViewController.swift */,
-				E06966A223F4317E00E7969D /* RequestCell.swift */,
-				E0AC44AD23FD0F0100E16043 /* AddRequestViewController.swift */,
-				E06966A323F4317E00E7969D /* RequestCell.xib */,
-				E078BB7723F2569900D4DCE9 /* LaunchScreen.storyboard */,
-				E099512123FE608C0059DDD1 /* GoogleService-Info.plist */,
-				E069669B23F42B2F00E7969D /* NewsCell.xib */,
-				E078BB7A23F2569900D4DCE9 /* Info.plist */,
+				E069669E23F42DB500E7969D /* NewsViewController.swift */,
+				E08B79D52407904700F98C2A /* RequestViewController.swift */,
 			);
-			path = Domkom;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E08B79D224078A9900F98C2A /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E078BB6C23F2569700D4DCE9 /* AppDelegate.swift */,
+				E078BB6E23F2569700D4DCE9 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		E08B79D324078AEF00F98C2A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E078BB7223F2569700D4DCE9 /* Main.storyboard */,
+				E078BB7723F2569900D4DCE9 /* LaunchScreen.storyboard */,
+				E06966A323F4317E00E7969D /* RequestCell.xib */,
+				E069669B23F42B2F00E7969D /* NewsCell.xib */,
+				E099512123FE608C0059DDD1 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,14 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E099511E23FE5DF60059DDD1 /* AuthentificationViewController.swift in Sources */,
-				E078BB7123F2569700D4DCE9 /* ViewController.swift in Sources */,
 				E0EE5EB524001F0400FAEFF3 /* NewsCellStruct.swift in Sources */,
 				E0AC44AE23FD0F0100E16043 /* AddRequestViewController.swift in Sources */,
 				E06966A423F4317E00E7969D /* RequestCell.swift in Sources */,
+				E08B79D92407966A00F98C2A /* RequestCellStruct.swift in Sources */,
 				E099512023FE5E050059DDD1 /* RegistrationViewController.swift in Sources */,
 				E078BB6D23F2569700D4DCE9 /* AppDelegate.swift in Sources */,
 				E099511C23FE5DD10059DDD1 /* AuthorizationViewController.swift in Sources */,
 				E069669C23F42B2F00E7969D /* NewsCell.swift in Sources */,
+				E08B79D62407904700F98C2A /* RequestViewController.swift in Sources */,
 				E069669F23F42DB500E7969D /* NewsViewController.swift in Sources */,
 				E078BB6F23F2569700D4DCE9 /* SceneDelegate.swift in Sources */,
 			);
