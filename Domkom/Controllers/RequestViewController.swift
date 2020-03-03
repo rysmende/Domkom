@@ -44,7 +44,6 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
         requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
         requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
         requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        
         requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
         requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
         requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))

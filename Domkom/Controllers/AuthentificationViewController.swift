@@ -19,8 +19,6 @@ class AuthentificationViewController: UIViewController {
         super.viewDidLoad()
 //        verificationID = defaults.string(forKey: "authVerificationID")!
 //        phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")!
-        print(phoneNumber)
-        print(verificationID)
     }
     
     @IBAction func signIn(_ sender: Any) {

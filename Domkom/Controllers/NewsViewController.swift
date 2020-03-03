@@ -7,27 +7,38 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 
 class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
-    var data : [NewsCellStruct] = []
+    var data = [NewsCellStruct]()
 
        override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+
+        let url = "https://dashboard.heroku.com/apps/domkom-app/news/"
         
-//        
-        //ask Adakhan on the following problem:
-        //Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[UIImageView _isSymbolImage]: unrecognized selector sent to instance 0x7ffab261fbc0'
+        Alamofire.request(url, method: .get).responseJSON {
+            (response) in
+            //print(response)
+            if response.result.isSuccess {
+                //let data = response.result.value
+                if response.data != nil {
+                    
+                        let json = JSON(data: response.data!)
+                        print(json)
+                    
+                }
+            } else {
+                print(response.result.error)
+            }
+        }
+        
     }
     
     func loadData(){
-        data.append(NewsCellStruct(image: UIImage(named: "Car")!, title: "Cars", date: "12-12-2012", coms: 3))
-        data.append(NewsCellStruct(image: UIImage(named: "Camera")!, title: "Camera", date: "12-12-2012", coms: 3))
-        data.append(NewsCellStruct(image: UIImage(named: "LaunchBackground")!, title: "Hello", date: "12-12-2012", coms: 3))
-        data.append(NewsCellStruct(image: UIImage(named: "Logo")!, title: "LOGORIPHM", date: "12-12-2012", coms: 3))
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -19,8 +19,8 @@ class NewsCell: UITableViewCell {
     func configure(news: NewsCellStruct) {
         newsTitle.text = news.title
         newsDate.text = news.date
-        newsImage.image = news.image
-        newsComs.text = "Количество комментариев: \(news.coms)"
+        //newsImage.image = news.image
+        newsComs.text = "Количество комментариев: \(news.text)"
     }
     
 }

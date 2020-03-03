@@ -16,8 +16,8 @@ class RequestCell: UITableViewCell {
     
     func configure(request: RequestCellStruct){
         self.icon.image = UIImage(named: request.icon)
-        self.num.text = self.num.text! + "\(request.num)"
-        self.type.text = self.type.text! + "\(request.type)"
+        self.num.text = "Заявка №\(request.num)"
+        self.type.text = "Тип заявки: \(request.type)"
     }
     
 }

@@ -14,7 +14,6 @@ class AuthorizationViewController: UIViewController {
 
     @IBOutlet weak var phoneAlert: UILabel!
     @IBOutlet weak var phoneField: UITextField!
-    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,7 @@ class AuthorizationViewController: UIViewController {
     PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             if error != nil {
                 print(error!)
-                self.phoneAlert.text = "Unknown Error"
+                self.phoneAlert.text = "Unexpected Error"
                 self.phoneAlert.isHidden = false
                 return
             }
