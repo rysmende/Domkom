@@ -32,8 +32,6 @@ class AuthentificationViewController: UIViewController {
         verificationCode: verificationCode)
         Auth.auth().signIn(with: credential) { (authResult, error) in
           if let error = error {
-            print (error)
-            print ("YO YOU MISSED SOMETHING UP THERE")
             return
           }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

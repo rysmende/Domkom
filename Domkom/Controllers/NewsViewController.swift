@@ -20,21 +20,21 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
         let url = "https://dashboard.heroku.com/apps/domkom-app/news/"
         
-        Alamofire.request(url, method: .get).responseJSON {
-            (response) in
-            //print(response)
-            if response.result.isSuccess {
-                //let data = response.result.value
-                if response.data != nil {
-                    
-                        let json = JSON(data: response.data!)
-                        print(json)
-                    
-                }
-            } else {
-                print(response.result.error)
-            }
-        }
+//        Alamofire.request(url, method: .get).responseJSON {
+//            (response) in
+//            //print(response)
+//            if response.result.isSuccess {
+//                //let data = response.result.value
+//                if response.data != nil {
+//                    
+//                        let json = JSON(data: response.data!)
+//                        print(json)
+//                    
+//                }
+//            } else {
+//                print(response.result.error)
+//            }
+//        }
         
     }
     

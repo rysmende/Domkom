@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import Firebase
 import FirebaseAuth
 
@@ -17,16 +18,32 @@ class AuthorizationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.removeObject(forKey: "token")
     }
     
     @IBAction func sendCode(_ sender: Any) {
+        var doExist = false
+        
         if phoneField.text?.count != 9 {
             phoneAlert.text = "Номер телефона должен состоять из 9 цифр"
             phoneAlert.isHidden = false
             return
         }
         let phoneNumber = "+996" + phoneField.text!
+        
+        ServerManager.shared.postPhone(phone: "0" + phoneField.text!, { (user) in
+            print(user.token)
+            UserDefaults.standard.set(user.token, forKey: "token")
+            doExist = true
+        }, { (error) in
+            print(error)
+            doExist = false
+        })
         Auth.auth().languageCode = "ru";
+        if !doExist {
+            print("not found")
+            return
+        }
     PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             if error != nil {
                 print(error!)
@@ -43,8 +60,6 @@ class AuthorizationViewController: UIViewController {
         }
        
     }
-        
-    
 
     /*
     // MARK: - Navigation

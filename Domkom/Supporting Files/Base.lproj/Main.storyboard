@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eht-NB-mnS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -178,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="208.69565217391306" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="gDw-ff-pIh">
             <objects>
-                <viewController storyboardIdentifier="RegistrationVC" id="hIo-1g-LU8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationVC" id="hIo-1g-LU8" customClass="RegistrationViewController" customModule="Domkom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="diy-cR-x3a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,6 +424,13 @@
                         <viewLayoutGuide key="safeArea" id="NeB-9x-Icd"/>
                     </view>
                     <navigationItem key="navigationItem" id="T73-co-uoU"/>
+                    <connections>
+                        <outlet property="addressField" destination="NpQ-W2-fgN" id="4ga-QS-jeQ"/>
+                        <outlet property="appartmentField" destination="CSa-Ti-YEO" id="Wwn-SP-cEX"/>
+                        <outlet property="floorField" destination="uin-eP-psP" id="FY9-1I-KwO"/>
+                        <outlet property="nameFIeld" destination="r8t-PD-kxU" id="aV3-rq-27I"/>
+                        <outlet property="peopleField" destination="5aN-Dl-LPJ" id="dks-Nu-o1N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8G-Qx-QuD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

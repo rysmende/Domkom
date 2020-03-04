@@ -19,13 +19,16 @@
 		E078BB7623F2569900D4DCE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7523F2569900D4DCE9 /* Assets.xcassets */; };
 		E078BB7923F2569900D4DCE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E078BB7723F2569900D4DCE9 /* LaunchScreen.storyboard */; };
 		E08B79D62407904700F98C2A /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B79D52407904700F98C2A /* RequestViewController.swift */; };
-		E08B79D92407966A00F98C2A /* RequestCellStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B79D82407966A00F98C2A /* RequestCellStruct.swift */; };
 		E099511C23FE5DD10059DDD1 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099511B23FE5DD10059DDD1 /* AuthorizationViewController.swift */; };
 		E099511E23FE5DF60059DDD1 /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099511D23FE5DF60059DDD1 /* AuthentificationViewController.swift */; };
 		E099512023FE5E050059DDD1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E099511F23FE5E050059DDD1 /* RegistrationViewController.swift */; };
 		E099512223FE608C0059DDD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E099512123FE608C0059DDD1 /* GoogleService-Info.plist */; };
 		E0AC44AE23FD0F0100E16043 /* AddRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC44AD23FD0F0100E16043 /* AddRequestViewController.swift */; };
-		E0EE5EB524001F0400FAEFF3 /* NewsCellStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EE5EB424001F0400FAEFF3 /* NewsCellStruct.swift */; };
+		FA8BD65F240E87F500EFB587 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BD65E240E87F500EFB587 /* HTTPRequestManager.swift */; };
+		FA8BD661240E87FD00EFB587 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BD660240E87FD00EFB587 /* HTTPStatusCode.swift */; };
+		FA8BD663240E880500EFB587 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BD662240E880500EFB587 /* ServerManager.swift */; };
+		FA8BD665240E884700EFB587 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BD664240E884700EFB587 /* Constants.swift */; };
+		FA8BD668240E8E4200EFB587 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BD667240E8E4200EFB587 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,13 +48,16 @@
 		E078BB7823F2569900D4DCE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E078BB7A23F2569900D4DCE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E08B79D52407904700F98C2A /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
-		E08B79D82407966A00F98C2A /* RequestCellStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCellStruct.swift; sourceTree = "<group>"; };
 		E099511B23FE5DD10059DDD1 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		E099511D23FE5DF60059DDD1 /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
 		E099511F23FE5E050059DDD1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E099512123FE608C0059DDD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0AC44AD23FD0F0100E16043 /* AddRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequestViewController.swift; sourceTree = "<group>"; };
-		E0EE5EB424001F0400FAEFF3 /* NewsCellStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellStruct.swift; sourceTree = "<group>"; };
+		FA8BD65E240E87F500EFB587 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
+		FA8BD660240E87FD00EFB587 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		FA8BD662240E880500EFB587 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		FA8BD664240E884700EFB587 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA8BD667240E8E4200EFB587 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +110,16 @@
 		E078BB6B23F2569700D4DCE9 /* Domkom */ = {
 			isa = PBXGroup;
 			children = (
+				FA8BD666240E8C2900EFB587 /* Model */,
 				E08B79D124078A7F00F98C2A /* Controllers */,
 				E08B79D224078A9900F98C2A /* Delegates */,
 				E08B79D324078AEF00F98C2A /* Supporting Files */,
 				E078BB7A23F2569900D4DCE9 /* Info.plist */,
-				E0EE5EB424001F0400FAEFF3 /* NewsCellStruct.swift */,
+				FA8BD65E240E87F500EFB587 /* HTTPRequestManager.swift */,
+				FA8BD664240E884700EFB587 /* Constants.swift */,
+				FA8BD660240E87FD00EFB587 /* HTTPStatusCode.swift */,
+				FA8BD662240E880500EFB587 /* ServerManager.swift */,
 				E069669A23F42B2F00E7969D /* NewsCell.swift */,
-				E08B79D82407966A00F98C2A /* RequestCellStruct.swift */,
 				E06966A223F4317E00E7969D /* RequestCell.swift */,
 				E078BB7523F2569900D4DCE9 /* Assets.xcassets */,
 			);
@@ -149,6 +158,14 @@
 				E099512123FE608C0059DDD1 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA8BD666240E8C2900EFB587 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA8BD667240E8E4200EFB587 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,13 +287,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E099511E23FE5DF60059DDD1 /* AuthentificationViewController.swift in Sources */,
-				E0EE5EB524001F0400FAEFF3 /* NewsCellStruct.swift in Sources */,
 				E0AC44AE23FD0F0100E16043 /* AddRequestViewController.swift in Sources */,
 				E06966A423F4317E00E7969D /* RequestCell.swift in Sources */,
-				E08B79D92407966A00F98C2A /* RequestCellStruct.swift in Sources */,
+				FA8BD65F240E87F500EFB587 /* HTTPRequestManager.swift in Sources */,
+				FA8BD661240E87FD00EFB587 /* HTTPStatusCode.swift in Sources */,
+				FA8BD665240E884700EFB587 /* Constants.swift in Sources */,
 				E099512023FE5E050059DDD1 /* RegistrationViewController.swift in Sources */,
 				E078BB6D23F2569700D4DCE9 /* AppDelegate.swift in Sources */,
+				FA8BD668240E8E4200EFB587 /* Model.swift in Sources */,
 				E099511C23FE5DD10059DDD1 /* AuthorizationViewController.swift in Sources */,
+				FA8BD663240E880500EFB587 /* ServerManager.swift in Sources */,
 				E069669C23F42B2F00E7969D /* NewsCell.swift in Sources */,
 				E08B79D62407904700F98C2A /* RequestViewController.swift in Sources */,
 				E069669F23F42DB500E7969D /* NewsViewController.swift in Sources */,
@@ -428,6 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PDT8ZAMYY2;
 				INFOPLIST_FILE = Domkom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,6 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PDT8ZAMYY2;
 				INFOPLIST_FILE = Domkom/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
