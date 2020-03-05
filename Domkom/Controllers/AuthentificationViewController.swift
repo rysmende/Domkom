@@ -13,26 +13,29 @@ import FirebaseAuth
 class AuthentificationViewController: UIViewController {
     
     @IBOutlet weak var codeField: UITextField!
+    @IBOutlet weak var codeAlert: UILabel!
     var verificationID:String = ""
     var phoneNumber:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        verificationID = defaults.string(forKey: "authVerificationID")!
-//        phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")!
+        codeField.keyboardType = .numberPad
     }
     
     @IBAction func signIn(_ sender: Any) {
-        if (codeField.text?.count != 6) {
-//        message.isHidden = false
-        return
+        if !isCorrect() {
+            return
         }
+        
         let verificationCode = codeField.text!
         let credential = PhoneAuthProvider.provider().credential(
         withVerificationID: verificationID,
         verificationCode: verificationCode)
         Auth.auth().signIn(with: credential) { (authResult, error) in
           if let error = error {
-            
+            print(error)
+            self.codeAlert.text = "Неправильно введен код"
+            self.codeAlert.isHidden = false
             return
           }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -42,14 +45,14 @@ class AuthentificationViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func isCorrect() -> Bool {
+        if codeField.text?.count != 6 {
+            if !codeField.text!.isInt {
+                codeAlert.text = "Код должен состоять из 6 цифр"
+                codeAlert.isHidden = false
+                return false
+            }
+        }
+        return true
     }
-    */
-
 }

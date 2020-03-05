@@ -17,28 +17,15 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
        override func viewDidLoad() {
         super.viewDidLoad()
-
-        let url = "https://dashboard.heroku.com/apps/domkom-app/news/"
+        ServerManager.shared.getNewsList(token: UserDefaults.standard.value(forKey: "token") as! String, { (data) in
+            self.data = data
+            print(data)
+            self.table.reloadData()
+        }) { (error) in
+            print(error)
+        }
         
-//        Alamofire.request(url, method: .get).responseJSON {
-//            (response) in
-//            //print(response)
-//            if response.result.isSuccess {
-//                //let data = response.result.value
-//                if response.data != nil {
-//                    
-//                        let json = JSON(data: response.data!)
-//                        print(json)
-//                    
-//                }
-//            } else {
-//                print(response.result.error)
-//            }
-//        }
         
-    }
-    
-    func loadData(){
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,7 +35,6 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let news = data[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
-        
         cell.configure(news:news)
         return cell
     }

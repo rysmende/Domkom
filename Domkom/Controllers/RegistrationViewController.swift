@@ -19,12 +19,16 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        appartmentField.keyboardType = .numberPad
+        peopleField.keyboardType = .numberPad
+        floorField.keyboardType = .numberPad
         // Do any additional setup after loading the view.
     }
     
     @IBAction func saveInfo(_ sender: Any) {
-        if nameField.text != nil && addressField.text != nil && appartmentField.text != nil && floorField.text != nil {
+        if nameField.text != "" && addressField.text != "" && appartmentField.text != "" && floorField.text != "" {
+            if appartmentField.text!.isInt && peopleField.text!.isInt && floorField.text!.isInt {
+                
             let full_name = nameField.text!
             let address = addressField.text!
             let owner_type = "Раздва"
@@ -41,7 +45,15 @@ class RegistrationViewController: UIViewController {
             }) { (error) in
                print(error)
             }
+            } else {
+                let alert = UIAlertController(title: "Неправильный ввод", message: "Пожалуйста, введите цифры в поля Квартира, Этаж и Кол-во проживающих людей.", preferredStyle: .alert)
+                           alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                           self.present(alert, animated: true)
+            }
         } else {
+            let alert = UIAlertController(title: "Незаполненные поля", message: "Кажется вы забыли заполнить все необходимые поля. Поля обязательные для заполнения выделены звездочкой.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
             return
        }
         

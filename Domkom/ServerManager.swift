@@ -63,6 +63,25 @@ extension ServerManager {
             }
         }, error: error)
     }
+    
+    func getNewsList(token: String, _ completion: @escaping ([NewsCellStruct])-> Void, _ error: @escaping (String)-> Void) {
+        let header: [String: String] = [
+            "Content-Type": "application/json",
+            "Authorization": "Token \(token)"
+        ]
+        self.get(url: "https://domkom-app.herokuapp.com/news-api/news/", header: header, completion: {
+            (data) in
+            do {
+                guard let data = data else {return}
+                let newsList = try JSONDecoder().decode([NewsCellStruct].self, from: data)
+                DispatchQueue.main.async {
+                    completion(newsList)
+                }
+            } catch let err {
+                error(err.localizedDescription)
+            }
+        }, error: error)
+    }
 }
 
 

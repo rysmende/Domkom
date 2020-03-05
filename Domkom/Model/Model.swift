@@ -17,7 +17,7 @@ struct Root: Decodable {
     let newsCells: [NewsCellStruct]
 }
 
-struct NewsCellStruct: Decodable {
+struct NewsCellStruct: Codable {
     var id: Int
     var title:String
     var image:String

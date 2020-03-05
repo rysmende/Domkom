@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIo-1g-LU8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eht-NB-mnS">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,16 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите номер телефона" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INj-KT-Mno">
-                                <rect key="frame" x="90.666666666666686" y="313" width="233" height="24"/>
+                                <rect key="frame" x="90.666666666666686" y="432" width="233" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="4qf-Cj-xGV">
-                                <rect key="frame" x="86.999999999999986" y="114" width="240.00000000000003" height="119"/>
+                                <rect key="frame" x="87" y="114" width="240" height="238"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+996" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8j-rb-y11">
-                                <rect key="frame" x="59.000000000000007" y="361.66666666666669" width="94.666666666666686" height="36.333333333333314"/>
+                                <rect key="frame" x="59.000000000000007" y="480.66666666666669" width="94.666666666666686" height="36.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36.5" id="odW-C1-f9k"/>
                                 </constraints>
@@ -35,10 +35,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneInput" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-d5-GKS">
-                                <rect key="frame" x="50" y="350" width="314" height="54.666666666666686"/>
+                                <rect key="frame" x="50" y="469" width="314" height="109"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-8v-TM5">
-                                <rect key="frame" x="37" y="432.66666666666669" width="340" height="89.000000000000057"/>
+                                <rect key="frame" x="-133" y="606" width="680" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="0hA-Ki-vaD"/>
                                 </constraints>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="555123456" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g4m-jb-54d">
-                                <rect key="frame" x="176" y="360" width="190" height="42"/>
+                                <rect key="frame" x="176" y="479" width="190" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="U1g-pj-VLR"/>
                                     <constraint firstAttribute="width" constant="190" id="fMZ-8M-G5t"/>
@@ -59,7 +59,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона должен содержать 9 цифр" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zQY-gx-3RN">
-                                <rect key="frame" x="59" y="410.33333333333331" width="298" height="21"/>
+                                <rect key="frame" x="59" y="583.66666666666663" width="298" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -108,26 +108,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rNb-56-614">
-                                <rect key="frame" x="113.66666666666667" y="114" width="187.00000000000003" height="119"/>
+                                <rect key="frame" x="20" y="114" width="374" height="238"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CodeInput" translatesAutoresizingMaskIntoConstraints="NO" id="iuO-dU-wL7">
-                                <rect key="frame" x="50" y="360" width="314" height="44.333333333333314"/>
+                                <rect key="frame" x="50" y="479" width="314" height="88"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите 6 значный код, который вы получили в SMS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buC-L1-NYK">
-                                <rect key="frame" x="41.333333333333343" y="289" width="331.33333333333326" height="48"/>
+                                <rect key="frame" x="41.333333333333343" y="408" width="331.33333333333326" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaV-qy-HIc">
-                                <rect key="frame" x="202" y="428" width="192" height="83"/>
+                                <rect key="frame" x="202" y="590.66666666666663" width="192" height="166"/>
                                 <state key="normal" title="Далее" backgroundImage="Button"/>
                                 <connections>
                                     <action selector="signIn:" destination="uaN-gy-V6R" eventType="touchUpInside" id="BFH-Jr-7T0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30G-Jw-vAL">
-                                <rect key="frame" x="50" y="449" width="98" height="30"/>
+                                <rect key="frame" x="50" y="611.66666666666663" width="98" height="30"/>
                                 <state key="normal" title="Получить код">
                                     <color key="titleColor" red="0.10565147549999999" green="0.38607141379999999" blue="0.7529779673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -136,10 +136,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Code" translatesAutoresizingMaskIntoConstraints="NO" id="KS6-1O-07u">
-                                <rect key="frame" x="81" y="354" width="75" height="11.666666666666686"/>
+                                <rect key="frame" x="81" y="473" width="150" height="23"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123456" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHj-2i-R88">
-                                <rect key="frame" x="70" y="360" width="274" height="44"/>
+                                <rect key="frame" x="70" y="479" width="274" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Olt-wP-3Yf"/>
                                 </constraints>
@@ -147,7 +147,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Код должен состоять из 6 цифр" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e46-zw-0Wg">
-                                <rect key="frame" x="50" y="409.33333333333331" width="314" height="17"/>
+                                <rect key="frame" x="50" y="572" width="314" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -181,6 +181,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gXm-oO-KhG"/>
                     <connections>
+                        <outlet property="codeAlert" destination="e46-zw-0Wg" id="8dO-hI-Nnu"/>
                         <outlet property="codeField" destination="jHj-2i-R88" id="L4G-DZ-dKN"/>
                     </connections>
                 </viewController>
@@ -210,8 +211,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФИО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbG-xL-3vG">
-                                <rect key="frame" x="37" y="247" width="30.666666666666671" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФИО*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbG-xL-3vG">
+                                <rect key="frame" x="37" y="247" width="36.666666666666657" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.10565147549999999" green="0.38607141379999999" blue="0.7529779673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>

@@ -70,7 +70,7 @@ class AuthorizationViewController: UIViewController {
             phoneAlert.isHidden = false
             return false
         }
-        if phoneField.text!.isInt {
+        if !phoneField.text!.isInt {
             phoneAlert.text = "Номер телефона должен состоять из цифр"
             phoneAlert.isHidden = false
             return false
