@@ -38,6 +38,31 @@ extension ServerManager {
             }
         }, error: error)
     }
+    
+    func postUserInfo(token: String, userInfo: UserInfo, _ completion: @escaping (String)-> Void, _ error: @escaping (String)-> Void) {
+        let dicArray = userInfo.automobile.map {
+            $0.dictionaryRepresentation
+        }
+        let parameters: [String: Any] = [
+            "full_name": userInfo.full_name,
+            "address": userInfo.address,
+            "flat": userInfo.flat,
+            "floor": userInfo.floor,
+            "people": userInfo.people,
+            "owner_type": userInfo.owner_type,
+            "automobile": dicArray
+        ]
+        let header: [String: String] = [
+            "Content-Type": "application/json",
+            "Authorization": "Token \(token)"
+        ]
+        self.post(url: "https://domkom-app.herokuapp.com/reg/users/", parameters: parameters, header: header, completion: { (data) in
+            guard let data = data else {return}
+            DispatchQueue.main.async {
+                completion("\(data)")
+            }
+        }, error: error)
+    }
 }
 
 

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct User: Codable {
     var user_id: Int
     var token: String
@@ -30,4 +29,21 @@ struct RequestCellStruct {
     var num: Int
     var type: String
     var icon: String
+}
+
+struct UserInfo: Codable {
+    let full_name, address, owner_type: String
+    let flat, floor, people: Int
+    let automobile: [Automobile]
+}
+
+struct Automobile: Codable {
+    let car_brand, car_model, car_number: String
+    var dictionaryRepresentation: [String: Any]{
+        return [
+            "car_brand" : car_brand,
+            "car_model" : car_model,
+            "car_number" : car_number
+        ]
+    }
 }
