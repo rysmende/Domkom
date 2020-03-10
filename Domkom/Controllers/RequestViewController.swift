@@ -29,63 +29,14 @@ class RequestViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveData()
-        // Do any additional setup after loading the view.
+        loadData()
     }
     
-    func saveData(){
-        let repair = "Ремонт"
-        let pass = "Пропуск"
-        let refresh = "RefreshIcon"
-        let accepted = "AcceptedIcon"
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: refresh))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: repair, icon: accepted))
-        requests.append(RequestCellStruct(num: requests.count + 1, type: pass, icon: accepted))
+    func loadData(){
+        ServerManager.shared.getRequestList(token: UserDefaults.standard.value(forKey: "token") as! String, { (requestsList) in
+            self.requests = requestsList
+            self.tableView.reloadData()
+        }, {(error) in print(error)})
     }
 
     /*

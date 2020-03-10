@@ -25,10 +25,11 @@ struct NewsCellStruct: Codable {
     var date:String
 }
 
-struct RequestCellStruct {
-    var num: Int
-    var type: String
-    var icon: String
+struct RequestCellStruct: Codable {
+    let id: Int
+    let service_type: String
+    let status: String
+    let description: String
 }
 
 struct UserInfo: Codable {

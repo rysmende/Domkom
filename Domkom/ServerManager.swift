@@ -82,6 +82,39 @@ extension ServerManager {
             }
         }, error: error)
     }
+    
+    func getImage(url: String, _ completion: @escaping (UIImage) -> Void, _ error: @escaping (String) -> Void){
+        self.get(url: url, header: [:], completion: { (data) in
+            do {
+                guard let data = data else {return}
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    completion(image!)
+                }
+            }
+        }) { (error) in
+            print(error)
+        }
+    }
+    
+    func getRequestList(token: String, _ completion: @escaping ([RequestCellStruct]) -> Void, _ error: @escaping (String) -> Void){
+        let header: [String: String] = [
+                   "Content-Type": "application/json",
+                   "Authorization": "Token \(token)"
+               ]
+        self.get(url: "https://domkom-app.herokuapp.com/service/service/", header: header, completion: {
+                   (data) in
+                   do {
+                       guard let data = data else {return}
+                       let requestList = try JSONDecoder().decode([RequestCellStruct].self, from: data)
+                       DispatchQueue.main.async {
+                           completion(requestList)
+                       }
+                   } catch let err {
+                       error(err.localizedDescription)
+                   }
+               }, error: error)
+    }
 }
 
 

@@ -19,7 +19,11 @@ class NewsCell: UITableViewCell {
     func configure(news: NewsCellStruct) {
         newsTitle.text = news.title
         newsDate.text = news.date
-        //newsImage.image = news.image
+        ServerManager.shared.getImage(url: news.image, { (image) in
+            self.newsImage.image = image
+        }) { (error) in
+            self.newsImage.image = UIImage(named: "LaunchBackground")
+        }
         newsComs.text = "Количество комментариев: \(news.text)"
     }
     

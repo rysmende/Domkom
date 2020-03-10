@@ -13,6 +13,7 @@ import SwiftyJSON
 class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
+    
     var data = [NewsCellStruct]()
 
        override func viewDidLoad() {
@@ -24,8 +25,6 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         }) { (error) in
             print(error)
         }
-        
-        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -14,10 +14,24 @@ class RequestCell: UITableViewCell {
     @IBOutlet weak var num: UILabel!
     @IBOutlet weak var icon: UIImageView!
     
-    func configure(request: RequestCellStruct){
-        self.icon.image = UIImage(named: request.icon)
-        self.num.text = "Заявка №\(request.num)"
-        self.type.text = "Тип заявки: \(request.type)"
+    func configure(request: RequestCellStruct) {
+        switch request.status {
+        case "RD":
+            icon.image = UIImage(named: "AcceptedIcon")
+            break
+        default:
+            icon.image = UIImage(named: "RefreshIcon")
+        }
+        num.text = "\(request.id)"
+        switch request.service_type {
+        case "TE":
+            type.text = "Пропуск"
+            break
+        case "RE":
+            type.text = "Ремонт"
+            break
+        default:
+            type.text = "Доп услуги"
+        }
     }
-    
 }
