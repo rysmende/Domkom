@@ -623,6 +623,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mc-dq-6t4">
+                                <rect key="frame" x="30" y="84" width="354" height="80"/>
+                                <state key="normal" title="Тип заявки" backgroundImage="DropDown"/>
+                                <connections>
+                                    <action selector="DisplayRequests:" destination="N5E-nc-eaS" eventType="touchUpInside" id="4l4-wo-SJj"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Комментарий к заявке" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-MY-7zD">
                                 <rect key="frame" x="30" y="199" width="354" height="200"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -633,13 +640,6 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mc-dq-6t4">
-                                <rect key="frame" x="30" y="84" width="354" height="80"/>
-                                <state key="normal" title="Тип заявки" backgroundImage="DropDown"/>
-                                <connections>
-                                    <action selector="DisplayRequests:" destination="N5E-nc-eaS" eventType="touchUpInside" id="4l4-wo-SJj"/>
-                                </connections>
-                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlA-x0-KJy">
                                 <rect key="frame" x="55" y="138" width="304" height="32"/>
                                 <constraints>
@@ -661,6 +661,17 @@
                                     <action selector="setType:" destination="N5E-nc-eaS" eventType="touchUpInside" id="gjI-hx-rTN"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3R-EA-8wF">
+                                <rect key="frame" x="55" y="202" width="304" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="1kg-FI-Ygb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Vj7-bZ-ptt"/>
+                                </constraints>
+                                <state key="normal" title="Доп услуги" backgroundImage="LineGray"/>
+                                <connections>
+                                    <action selector="setType:" destination="N5E-nc-eaS" eventType="touchUpInside" id="ckl-yT-EnY"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsn-ub-B7y">
                                 <rect key="frame" x="30" y="638" width="354" height="89"/>
                                 <constraints>
@@ -669,6 +680,9 @@
                                 <state key="normal" title="Отправить" backgroundImage="Button">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendRequest:" destination="N5E-nc-eaS" eventType="touchUpInside" id="BZg-xC-ZhG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -680,21 +694,27 @@
                             <constraint firstItem="rlA-x0-KJy" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="55" id="ZhY-1K-rYZ"/>
                             <constraint firstItem="Xsn-ub-B7y" firstAttribute="leading" secondItem="W8f-MY-7zD" secondAttribute="leading" id="eWu-wN-RO4"/>
                             <constraint firstItem="2mc-dq-6t4" firstAttribute="top" secondItem="Aq9-sM-hGd" secondAttribute="top" constant="40" id="gHf-MR-NIO"/>
+                            <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="u3R-EA-8wF" secondAttribute="trailing" constant="55" id="hgo-LQ-oTa"/>
                             <constraint firstItem="Xsn-ub-B7y" firstAttribute="centerX" secondItem="Ayh-DD-FjQ" secondAttribute="centerX" id="iYP-09-ZZ0"/>
                             <constraint firstItem="ChQ-Vn-of0" firstAttribute="top" secondItem="2mc-dq-6t4" secondAttribute="bottom" constant="6" id="kAl-uh-HxI"/>
+                            <constraint firstItem="u3R-EA-8wF" firstAttribute="top" secondItem="ChQ-Vn-of0" secondAttribute="bottom" id="l0v-v5-G33"/>
                             <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="rlA-x0-KJy" secondAttribute="trailing" constant="55" id="out-dl-NYq"/>
                             <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="W8f-MY-7zD" secondAttribute="trailing" constant="30" id="pV3-Yw-Cpp"/>
                             <constraint firstItem="Aq9-sM-hGd" firstAttribute="trailing" secondItem="2mc-dq-6t4" secondAttribute="trailing" constant="30" id="vMo-1P-6KN"/>
                             <constraint firstItem="W8f-MY-7zD" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="30" id="vmh-dS-TW1"/>
                             <constraint firstItem="2mc-dq-6t4" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="30" id="zf2-pX-cHw"/>
+                            <constraint firstItem="u3R-EA-8wF" firstAttribute="leading" secondItem="Aq9-sM-hGd" secondAttribute="leading" constant="55" id="zlt-Qs-atV"/>
                             <constraint firstItem="Aq9-sM-hGd" firstAttribute="bottom" secondItem="Xsn-ub-B7y" secondAttribute="bottom" constant="135" id="zpQ-fU-n9G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Aq9-sM-hGd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Оставить заявку" id="RBl-t8-Nwb"/>
                     <connections>
+                        <outlet property="descField" destination="W8f-MY-7zD" id="vWA-ZB-EEs"/>
+                        <outlet property="typeButton" destination="2mc-dq-6t4" id="PGk-vc-fgH"/>
                         <outletCollection property="requests" destination="rlA-x0-KJy" collectionClass="NSMutableArray" id="bu6-Nj-dRl"/>
                         <outletCollection property="requests" destination="ChQ-Vn-of0" collectionClass="NSMutableArray" id="AMf-ly-0tC"/>
+                        <outletCollection property="requests" destination="u3R-EA-8wF" collectionClass="NSMutableArray" id="YHa-5R-Hqo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sjr-oV-yFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

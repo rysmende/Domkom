@@ -115,6 +115,22 @@ extension ServerManager {
                    }
                }, error: error)
     }
+    
+    func postRequest(token: String, request: RequestCellStruct, _ completion: @escaping (String) -> Void, _ error: @escaping (String) -> Void){
+        let header: [String: String] = [
+                   "Content-Type": "application/json",
+                   "Authorization": "Token \(token)"
+               ]
+        let parameters: [String: Any] = [
+                "service_type" : request.service_type,
+                "status" : request.status,
+                "description" : request.description
+            ]
+        self.post(url: "https://domkom-app.herokuapp.com/service/service/", parameters: parameters, header: header, completion: {
+            (data) in
+            print(data ?? "success")
+        }, error: error)
+    }
 }
 
 

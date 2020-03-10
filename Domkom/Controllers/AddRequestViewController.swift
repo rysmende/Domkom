@@ -11,12 +11,16 @@ import UIKit
 class AddRequestViewController: UIViewController {
 
     @IBOutlet var requests: [UIButton]!
+    var type:String = ""
+    @IBOutlet weak var typeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var descField: UITextField!
     
     @IBAction func DisplayRequests(_ sender: UIButton) {
         requests.forEach { (button) in
@@ -27,10 +31,31 @@ class AddRequestViewController: UIViewController {
     }
     
     @IBAction func setType(_ sender: UIButton) {
-        print(sender.titleLabel?.text ?? "Unknown")
+        let type = sender.titleLabel!.text
+        switch type {
+        case "Ремонт":
+            self.type = "RE"
+            break
+        case "Пропуск":
+            self.type = "TE"
+            break
+        default:
+            self.type = "SE"
+        }
+        typeButton.titleLabel!.text = type
     }
     
     
+    @IBAction func sendRequest(_ sender: Any) {
+        let request = RequestCellStruct(id:0, service_type:self.type, status:"IN", description:descField.text ?? "")
+        ServerManager.shared.postRequest(token: UserDefaults.standard.value(forKey: "token") as! String, request:request, {
+            (data) in
+            print(data)
+        },{
+            (error) in
+            print(error)
+        })
+    }
     /*
     // MARK: - Navigation
 
