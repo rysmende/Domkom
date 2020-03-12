@@ -51,7 +51,7 @@ class RegistrationViewController: UIViewController {
                            self.present(alert, animated: true)
             }
         } else {
-            let alert = UIAlertController(title: "Незаполненные поля", message: "Кажется вы забыли заполнить все необходимые поля. Поля обязательные для заполнения выделены звездочкой.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Неправильный ввод данных", message: "Заполните все необходимые поля. Поля обязательные для заполнения выделены звёздочкой.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.present(alert, animated: true)
             return

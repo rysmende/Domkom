@@ -73,7 +73,10 @@ extension ServerManager {
             (data) in
             do {
                 guard let data = data else {return}
-                let newsList = try JSONDecoder().decode([NewsCellStruct].self, from: data)
+                var newsList = try JSONDecoder().decode([NewsCellStruct].self, from: data)
+                for index in (0...newsList.count - 1){
+                    newsList[index].date = String(newsList[index].date.prefix(10))
+                }
                 DispatchQueue.main.async {
                     completion(newsList)
                 }
@@ -92,9 +95,7 @@ extension ServerManager {
                     completion(image!)
                 }
             }
-        }) { (error) in
-            print(error)
-        }
+        }, error: error)
     }
     
     func getRequestList(token: String, _ completion: @escaping ([RequestCellStruct]) -> Void, _ error: @escaping (String) -> Void){

@@ -21,10 +21,10 @@ class NewsCell: UITableViewCell {
         newsDate.text = news.date
         ServerManager.shared.getImage(url: news.image, { (image) in
             self.newsImage.image = image
-        }) { (error) in
+        }, { (error) in
             self.newsImage.image = UIImage(named: "LaunchBackground")
-        }
-        newsComs.text = "Количество комментариев: \(news.text)"
+        })
+        newsComs.text = "Количество комментариев: "
     }
     
 }

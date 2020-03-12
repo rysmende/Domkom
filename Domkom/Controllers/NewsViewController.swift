@@ -20,7 +20,6 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         ServerManager.shared.getNewsList(token: UserDefaults.standard.value(forKey: "token") as! String, { (data) in
             self.data = data
-            print(data)
             self.table.reloadData()
         }) { (error) in
             print(error)
@@ -38,6 +37,16 @@ class NewsViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let news = data[indexPath.row]
+        print(news.title)
+         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SeparateVC") as? SeparateNewsViewController {
+            viewController.configure(news: news)
+               if let navigator = navigationController {
+                   navigator.pushViewController(viewController, animated: true)
+               }
+           }
+    }
    
     // MARK: - Table view data source
 

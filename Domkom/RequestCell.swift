@@ -22,7 +22,7 @@ class RequestCell: UITableViewCell {
         default:
             icon.image = UIImage(named: "RefreshIcon")
         }
-        num.text = "\(request.id)"
+        num.text = "Заявка №\(request.id)"
         switch request.service_type {
         case "TE":
             type.text = "Пропуск"
@@ -31,7 +31,9 @@ class RequestCell: UITableViewCell {
             type.text = "Ремонт"
             break
         default:
-            type.text = "Доп услуги"
+            type.text = "Доп. услуги"
         }
+        type.text = "Тип заявки: " + type.text!
+        
     }
 }

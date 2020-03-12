@@ -43,6 +43,11 @@ class AddRequestViewController: UIViewController {
             self.type = "SE"
         }
         typeButton.titleLabel!.text = type
+        requests.forEach { (button) in
+        UIView.animate(withDuration: 0.3, animations: {
+            button.isHidden = !button.isHidden
+            })
+        }
     }
     
     
@@ -51,10 +56,18 @@ class AddRequestViewController: UIViewController {
         ServerManager.shared.postRequest(token: UserDefaults.standard.value(forKey: "token") as! String, request:request, {
             (data) in
             print(data)
-        },{
+        }, {
             (error) in
             print(error)
+            return
         })
+        let alert = UIAlertController(title: "Успешно", message: "Ваша заявка успешно отправлена!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "MainVC")
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

@@ -18,15 +18,17 @@ var window: UIWindow?
     internal func application(_ application: UIApplication,
       didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      FirebaseApp.configure()
+        FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysShow
-
+        
+        
       return true
     }
+    
 
     // MARK: UISceneSession Lifecycle
 
